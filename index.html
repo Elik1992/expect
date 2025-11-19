@@ -1,192 +1,137 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>ExpectConsulting – Insurance & Recovery Support</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Expect Consulting</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f7f7f7;
+            color: #333;
+        }
 
-<style>
-    /* BODY & FONT */
-    body {
-        margin: 0;
-        font-family: 'Arial', sans-serif;
-        background: #F9FAFB; /* ExpectCare style light background */
-        color: #002B5B; /* Dark blue main text */
-    }
+        /* Header */
+        header {
+            display: flex;
+            align-items: center;
+            padding: 10px 20px;
+            background-color: #ffffff; /* Sayt fonu */
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
 
-    /* HEADER WITH LOGO */
-    .header {
-        background: #FFFFFF;
-        padding: 25px 8%;
-        text-align: center;
-        border-bottom: 2px solid #E5EEF8;
-        box-shadow: 0px 4px 10px rgba(0,0,0,0.05);
-    }
+        .logo {
+            height: 50px;
+        }
 
-    .header h1 {
-        color: #0055FF; /* ExpectCare blue */
-        font-size: 36px;
-        margin: 0;
-        font-weight: 700;
-    }
+        .site-title {
+            flex: 1;
+            text-align: center;
+            font-size: 24px;
+            font-weight: bold;
+            color: #0078d4; /* expectcare.ca rəngi */
+        }
 
-    /* HERO SECTION */
-    .hero {
-        display: flex;
-        flex-wrap: wrap;
-        align-items: center;
-        justify-content: center;
-        padding: 60px 8%;
-        background: linear-gradient(to bottom, #EAF4FF, #F9FAFB);
-    }
+        /* Hero Section */
+        .hero {
+            text-align: center;
+            padding: 50px 20px;
+            background-color: #e6f0fa; /* expectcare.ca mavi fon */
+        }
 
-    .hero-text {
-        max-width: 500px;
-        text-align: center;
-        margin-bottom: 20px;
-    }
+        .hero img {
+            max-width: 80%;
+            height: auto;
+            margin-top: 20px;
+        }
 
-    .hero-text h2 {
-        font-size: 24px;
-        font-weight: 400;
-        margin-bottom: 8px;
-    }
+        .hero h1 {
+            font-size: 36px;
+            color: #0078d4;
+        }
 
-    .hero-text h1 {
-        font-size: 38px;
-        font-weight: 700;
-        margin-bottom: 12px;
-        color: #002B5B;
-    }
+        /* Services Section */
+        .services-section {
+            padding: 50px 20px;
+            text-align: center;
+        }
 
-    .hero-text p {
-        font-size: 18px;
-        line-height: 1.6;
-        margin-bottom: 25px;
-        color: #3b4b65;
-    }
+        .services-title {
+            font-size: 32px;
+            margin-bottom: 30px;
+            color: #0078d4;
+        }
 
-    .cta-btn {
-        display: inline-block;
-        background: #FF675A; /* Orange accent */
-        color: white;
-        padding: 14px 28px;
-        border-radius: 8px;
-        font-size: 18px;
-        font-weight: 600;
-        text-decoration: none;
-    }
+        .services {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+        }
 
-    .hero img {
-        width: 430px;
-        max-width: 100%;
-        margin-top: 20px;
-    }
+        .service-card {
+            background-color: #ffffff;
+            padding: 20px;
+            width: 250px;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
 
-    /* SERVICES SECTION */
-    .services-section {
-        text-align: center;
-        padding: 60px 8%;
-        background: #FFFFFF;
-    }
+        .service-card h3 {
+            color: #0078d4;
+        }
 
-    .services-title {
-        font-size: 32px;
-        font-weight: 700;
-        margin-bottom: 35px;
-        color: #002B5B;
-    }
+        .service-card p {
+            margin: 10px 0 15px;
+        }
 
-    .services {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-        gap: 25px;
-    }
+        .service-btn {
+            text-decoration: none;
+            padding: 10px 20px;
+            background-color: #0078d4;
+            color: #fff;
+            border-radius: 4px;
+        }
 
-    .service-card {
-        background: #F9FAFB;
-        padding: 25px;
-        border-radius: 12px;
-        box-shadow: 0px 6px 15px rgba(0,0,0,0.05);
-        border: 1px solid #E5EEF8;
-        transition: transform 0.3s;
-    }
+        /* Why Choose Us */
+        .why-section {
+            padding: 50px 20px;
+            background-color: #f0f8ff;
+            text-align: center;
+        }
 
-    .service-card:hover {
-        transform: translateY(-5px);
-    }
+        .why-title {
+            font-size: 32px;
+            color: #0078d4;
+            margin-bottom: 20px;
+        }
 
-    .service-card h3 {
-        font-size: 20px;
-        margin-bottom: 10px;
-        color: #0055FF;
-    }
+        .why-list {
+            list-style: none;
+            padding: 0;
+            max-width: 600px;
+            margin: 0 auto;
+        }
 
-    .service-card p {
-        font-size: 15px;
-        color: #506077;
-    }
-
-    .service-btn {
-        margin-top: 15px;
-        display: inline-block;
-        padding: 10px 20px;
-        background: #0055FF;
-        color: white;
-        border-radius: 6px;
-        font-size: 15px;
-        text-decoration: none;
-        font-weight: 600;
-    }
-
-    /* WHY CHOOSE US */
-    .why-section {
-        padding: 60px 8%;
-        background: #EAF4FF;
-    }
-
-    .why-title {
-        font-size: 32px;
-        font-weight: 700;
-        text-align: center;
-        margin-bottom: 30px;
-        color: #002B5B;
-    }
-
-    .why-list {
-        max-width: 700px;
-        margin: auto;
-        font-size: 18px;
-        line-height: 1.8;
-        color: #3b4b65;
-    }
-
-    .why-list li {
-        margin-bottom: 12px;
-    }
-
-</style>
+        .why-list li {
+            margin: 15px 0;
+            font-size: 18px;
+        }
+    </style>
 </head>
 <body>
 
-<!-- HEADER WITH LOGO -->
-<div class="header">
-    <h1>ExpectConsulting</h1>
-</div>
+<header>
+    <img src="4516492d-f907-4435-aa4a-ca4b.png" alt="Expect Consulting Logo" class="logo">
+    <div class="site-title">Expect Consulting</div>
+</header>
 
-<!-- HERO SECTION -->
 <section class="hero">
-    <div class="hero-text">
-        <h2>Your Partner in</h2>
-        <h1>Recovery & Insurance Claims</h1>
-        <h2>In a car accident?</h2>
-        <p>We make recovery, insurance claims, car repairs, and in-home care easy.</p>
-        <a class="cta-btn" href="#">Call Now – Get Support Today</a>
-    </div>
+    <h1>Welcome to Expect Consulting</h1>
     <img src="12.jpg" alt="Car accident care illustration">
 </section>
 
-<!-- SERVICES SECTION -->
 <section class="services-section">
     <div class="services-title">Our Services</div>
     <div class="services">
@@ -195,16 +140,19 @@
             <p>Personal injury lawyers to guide your claim.</p>
             <a href="#" class="service-btn">Learn More</a>
         </div>
+
         <div class="service-card">
             <h3>Physiotherapy</h3>
             <p>Recover faster with expert care.</p>
             <a href="#" class="service-btn">Book Appointment</a>
         </div>
+
         <div class="service-card">
             <h3>Car Repairs</h3>
             <p>Hassle-free vehicle assessment & repair assistance.</p>
             <a href="#" class="service-btn">Arrange Repair</a>
         </div>
+
         <div class="service-card">
             <h3>PSW Support</h3>
             <p>In-home assistance during recovery.</p>
@@ -213,7 +161,6 @@
     </div>
 </section>
 
-<!-- WHY CHOOSE US -->
 <section class="why-section">
     <h2 class="why-title">Why Choose Expect Consulting?</h2>
     <ul class="why-list">
@@ -225,4 +172,3 @@
 
 </body>
 </html>
-
